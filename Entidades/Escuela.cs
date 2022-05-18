@@ -17,6 +17,7 @@ namespace CoreEscuela.Entidades
         public string Ciudad { get; set; }
 
         public TiposEscuela TipoEscuela { get; set; }
+        public Curso[] Cursos { get; set; }
 
         // Constructor
         // El constructor es un metodo
