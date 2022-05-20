@@ -1,7 +1,11 @@
+using System;
+using System.Collections.Generic;
+
 namespace CoreEscuela.Entidades
 {
-    class Escuela
+    public class Escuela
     {
+        public string UniqueId { get; set; } = Guid.NewGuid().ToString(); 
         string nombre;
         // Aplicando concepto de encapsulamiento para atributo nombre
         // dentro de una propiedad "que accede a la variable"
@@ -17,20 +21,9 @@ namespace CoreEscuela.Entidades
         public string Ciudad { get; set; }
 
         public TiposEscuela TipoEscuela { get; set; }
-        public Curso[] Cursos { get; set; }
+        public List<Curso> Cursos { get; set; }
 
-        // Constructor
-        // El constructor es un metodo
-        // Existen muchas maneras de crear el constructor 
-        // Manera 1
-        // public Escuela(string nombre, int año)
-        // {
-        //     this.nombre = nombre;
-        //     AñoDeCreación = año;
-        // }
-        // Manera 2 (igualación por tuplas)
-        // public Escuela(string nombre, int año) => (Nombre, AñoDeCreación) = (nombre, año);
-        // Manera 3, para este ejemplo pais, ciudad es opcional
+
         public Escuela(string nombre, int año, TiposEscuela tipo, string pais="", string ciudad="")
         {
             (Nombre, AñoDeCreación) = (nombre, año);
